@@ -28,7 +28,7 @@ namespace Sondage.Commands
 
         public virtual void DoSomethingWithParameter(ViewModelBase cible, object parameter)
         {
-
+            // TODO
         }
     }
 }
