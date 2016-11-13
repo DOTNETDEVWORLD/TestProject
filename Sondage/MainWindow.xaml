@@ -1,0 +1,25 @@
+﻿<Window x:Class="Sondage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Sondage.ViewModels"
+        xmlns:v="clr-namespace:Sondage.Views"
+        xmlns:local="clr-namespace:Sondage"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <DataTemplate DataType="{x:Type vm:QuestionsViewModel}">
+                <v:QuestionsViews></v:QuestionsViews>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vm:RecapViewModel}">
+                <v:RecapView></v:RecapView>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding CurrentView}"></ContentControl>
+    </Grid>
+</Window>
